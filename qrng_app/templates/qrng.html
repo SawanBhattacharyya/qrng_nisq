@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QRNG Webpage</title>
+    {% load static %} <!-- Add this line to load the static tag -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+
+</head>
+<body>
+    <h1 id="heading">{{ heading }}</h1>
+    
+    <h2> What is a QRNG? </h2>
+    
+    <p class="box">  Quantum Random Number Generators (QRNGs) hold too much importance in computer science due to their capacity to produce genuinely random numbers, a critical asset in myriad applications. In the realm of cryptography, QRNGs bolster security by generating unpredictable keys, guarding against cryptographic vulnerabilities. They play a pivotal role in Quantum Key Distribution (QKD) protocols, guaranteeing secure communications resistant to quantum computing threats. QRNGs also benefit randomized algorithms, machine learning, and various simulations by offering a source of high-quality randomness, enabling more efficient and reliable outcomes. In essence, QRNGs are a cornerstone of computer science, underpinning the bedrock of security, data integrity, and algorithmic robustness.</p>
+    <br>
+    <h2> Why QRNG? </h2>
+    <p class="box" > Quantum Random Number Generators (QRNGs) hold a pivotal role in modern technology and science due to their unique ability to produce genuinely random numbers. The importance of QRNGs can be summarized in their contributions to two fundamental aspects of our digital world: security and computation.
+
+        In the realm of security, QRNGs are a vital component of modern cryptography. They generate random keys and seeds that are nearly impossible for adversaries to predict, bolstering the security of encrypted communications, secure authentication, and data protection. In an era where cyber threats are ever-evolving, QRNGs provide a robust defense against attacks by ensuring the unpredictability and secrecy of cryptographic keys.
+        
+        Additionally, QRNGs play a crucial role in quantum computing and simulation. Quantum computers harness the power of quantum bits (qubits), and to perform complex calculations and simulations, they require a source of true randomness for tasks such as optimization, materials science, and drug discovery. QRNGs offer a reliable source of randomness in this quantum realm, enabling quantum computers to tackle problems that were previously infeasible for classical computers.
+        
+        In essence, QRNGs serve as the guardians of data security and the enablers of groundbreaking scientific advancements. Their impact extends from safeguarding our digital communications to revolutionizing the way we approach computation, making them a cornerstone of our technological landscape.</p>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        <label for="desired-length">Enter the desired length of bit sequence:</label>
+        <input type="number" id="desired-length" name="desired_length" required>
+        <br>
+        <button type="submit" id="btn">Generate</button>
+    </form>
+    <p>Random Bit Sequence: {{ random_bits }}</p>
+</body>
+</html>
+
