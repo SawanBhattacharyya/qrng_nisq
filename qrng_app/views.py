@@ -4,7 +4,7 @@ from django.conf import settings
 import os
 
 def qrng_page(request):
-    template = select_template(['qrng.html'])
+    template = select_template(['index.html'])
 
     if request.method == 'POST':
         # If the form is submitted, get the desired length from POST data
@@ -38,5 +38,5 @@ def qrng_page(request):
         'random_bits': selected_bits,
     }
 
-    return render(request, 'qrng.html', context)
+    return render(request, 'index.html', context)
 
